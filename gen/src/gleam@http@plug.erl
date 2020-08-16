@@ -1,7 +1,7 @@
 -module(gleam@http@plug).
 -compile(no_auto_import).
 
--export([port/1, host/1, scheme/1, method/1, request_path/1, req_headers/1, query_string/1, conn_to_request/2, send/2]).
+-export([port/1, host/1, scheme/1, method/1, request_path/1, req_headers/1, query_string/1, conn_to_request/2, send/2, halt/1]).
 
 port(A) ->
     'Elixir.GleamPlug':port(A).
@@ -50,3 +50,6 @@ send(Response, Conn) ->
         erlang:element(2, Response),
         erlang:element(4, Response)
     ).
+
+halt(A) ->
+    'Elixir.Plug.Conn':halt(A).
