@@ -1,0 +1,9 @@
+%{
+  "gleam_http": {:hex, :gleam_http, "1.3.0", "dc84d787cb49550d7e98834a966a4f07ee90fe863a6088e752e8f1a208ab41c1", [:rebar3], [{:gleam_stdlib, "~> 0.10.0", [hex: :gleam_stdlib, repo: "hexpm", optional: false]}], "hexpm", "11b3815d1275847f7357a0eb94856e5627d5aa85080aac770d480db1f9240a0a"},
+  "gleam_stdlib": {:hex, :gleam_stdlib, "0.10.1", "f123f33e03b5cdf5e19fc179b9ee81269deb93f7defadb17ef2930e4db9011e7", [:rebar3], [], "hexpm", "8acd5d8ae1bd013b848f22745be39e6d25968bf29899a87eb5d7057f4ed89dd0"},
+  "mime": {:hex, :mime, "1.3.1", "30ce04ab3175b6ad0bdce0035cba77bba68b813d523d1aac73d9781b4d193cf8", [:mix], [], "hexpm", "6cbe761d6a0ca5a31a0931bf4c63204bceb64538e664a8ecf784a9a6f3b875f1"},
+  "mix_gleam": {:hex, :mix_gleam, "0.1.0", "a0cee5d30de865124a32ca6cd53b64c3e2ac57f12adf6e47b88fb673f47c716e", [:mix], [], "hexpm", "9ff518e6aab444c7f2e74038f9383020ef89810cf1f4402911f33b202ffd72e7"},
+  "plug": {:hex, :plug, "1.10.4", "41eba7d1a2d671faaf531fa867645bd5a3dce0957d8e2a3f398ccff7d2ef017f", [:mix], [{:mime, "~> 1.0", [hex: :mime, repo: "hexpm", optional: false]}, {:plug_crypto, "~> 1.1.1 or ~> 1.2", [hex: :plug_crypto, repo: "hexpm", optional: false]}, {:telemetry, "~> 0.4", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "ad1e233fe73d2eec56616568d260777b67f53148a999dc2d048f4eb9778fe4a0"},
+  "plug_crypto": {:hex, :plug_crypto, "1.1.2", "bdd187572cc26dbd95b87136290425f2b580a116d3fb1f564216918c9730d227", [:mix], [], "hexpm", "6b8b608f895b6ffcfad49c37c7883e8df98ae19c6a28113b02aa1e9c5b22d6b5"},
+  "telemetry": {:hex, :telemetry, "0.4.2", "2808c992455e08d6177322f14d3bdb6b625fbcfd233a73505870d8738a2f4599", [:rebar3], [], "hexpm", "2d1419bd9dda6a206d7b5852179511722e2b18812310d304620c7bd92a13fcef"},
+}
