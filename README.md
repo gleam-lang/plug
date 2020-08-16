@@ -27,9 +27,7 @@ defmodule MyPlug do
 
   def call(conn, params) do
     conn
-    |> GleamPlug.conn_to_request(params)
-    |> :my_gleam_module.service(req)
-    |> GleamPlug.send(conn)
+    |> GleamPlug.call_service(params, &:my_gleam_module.service/1)
   end
 end
 ```

@@ -24,12 +24,12 @@ defmodule GleamPlug do
 
         def call(conn, params) do
           conn
-          |> GleamPlug.conn_to_request(params)
-          |> :my_gleam_module.service(req)
-          |> GleamPlug.send(conn)
+          |> GleamPlug.call_service(params, &:my_gleam_module.service/1)
         end
       end
   """
+
+  import Kernel, except: [send: 2]
 
   @type headers :: [{String.t(), String.t()}]
   @type option(inner) :: :none | {:some, inner}
@@ -76,6 +76,21 @@ defmodule GleamPlug do
   """
   def send(response, conn) do
     :gleam@http@plug.send(response, conn)
+  end
+
+  @doc """
+  Call a Gleam HTTP service for a given Plug connection.
+
+  It is common Plug applications to extract and decode the request
+  body using a middleware so this function does not attempt to read
+  the body directly from the conn, instead it must be given as the
+  second argument.
+  """
+  def call_service(conn, params, service) do
+    conn
+    |> conn_to_request(params)
+    |> service.()
+    |> send(conn)
   end
 
   @doc false
