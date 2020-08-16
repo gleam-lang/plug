@@ -1,6 +1,38 @@
-# GleamPlug
+# Gleam Plug! 🔌
 
-**TODO: Add description**
+A Gleam HTTP service adapter for the Plug web application interface.
+
+## Usage
+
+Define a Gleam HTTP service
+
+```rust
+import gleam/http
+import gleam/bit_builder.{BitBuilder}
+
+pub fn service(req: http.Request(BitBuilder)) {
+  http.response(200)
+  |> http.prepend_resp_header("made-with", "Gleam")
+  |> http.set_resp_body(req.body)
+}
+```
+
+And then call it from an Elixir Plug application
+
+```elixir
+defmodule MyPlug do
+  def init(options) do
+    options
+  end
+
+  def call(conn, params) do
+    conn
+    |> GleamPlug.conn_to_request(params)
+    |> :my_gleam_module.service(req)
+    |> GleamPlug.send(conn)
+  end
+end
+```
 
 ## Installation
 
