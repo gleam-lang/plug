@@ -25,7 +25,21 @@ defmodule MyPlug do
     options
   end
 
-  def call(conn, params) do
+  def call(conn, body) do
+    conn
+    |> GleamPlug.call_service(body, &:my_gleam_module.service/1)
+  end
+end
+```
+
+Phoenix controllers are Plugs and so Gleam services can be called from them
+in the same way.
+
+```elixir
+defmodule MyAppWeb.UserController do
+  use MyAppWeb, :controller
+
+  def show(conn, params) do
     conn
     |> GleamPlug.call_service(params, &:my_gleam_module.service/1)
   end
