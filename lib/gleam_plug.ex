@@ -71,7 +71,7 @@ defmodule GleamPlug do
   Send a Gleam HTTP response over the Plug connection.
 
   Note that this function does not halt the connection, so if subsequent
-  plugs try to send another response, it will error out. Use `Plug.Conn.halt/1!
+  plugs try to send another response, it will error out. Use `Plug.Conn.halt/1!`
   after this function if you want to halt the plug pipeline.
   """
   def send(response, conn) do

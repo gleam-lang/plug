@@ -9,6 +9,11 @@ defmodule GleamPlug.MixProject do
       start_permanent: Mix.env() == :prod,
       erlc_paths: ["src", "gen"],
       compilers: [:gleam | Mix.compilers()],
+      description: "A Gleam HTTP service adapter for the Plug web application interface",
+      package: [
+        licenses: ["Apache-2.0"],
+        links: %{github: "https://github.com/gleam-experiments/plug"}
+      ],
       deps: deps()
     ]
   end
@@ -25,7 +30,8 @@ defmodule GleamPlug.MixProject do
     [
       {:mix_gleam, "~> 0.1"},
       {:gleam_http, "~> 1.3"},
-      {:plug, "~> 1.10"}
+      {:plug, "~> 1.10"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 end
