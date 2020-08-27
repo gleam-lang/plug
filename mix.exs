@@ -12,7 +12,7 @@ defmodule GleamPlug.MixProject do
       description: "A Gleam HTTP service adapter for the Plug web application interface",
       package: [
         licenses: ["Apache-2.0"],
-        links: %{github: "https://github.com/gleam-experiments/plug"}
+        links: %{github: "https://github.com/gleam-lang/plug"}
       ],
       deps: deps()
     ]
